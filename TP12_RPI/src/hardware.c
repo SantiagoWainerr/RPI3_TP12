@@ -110,7 +110,7 @@ void toggle (void){
 		}
 		copia = archivo;
 
-		fgets(estado, 1, copia);
+		fgetc(estado, 1, copia);
 
 		if(*estado == '1'){
 			if(fputc('0', archivo) == -1){
