@@ -98,7 +98,7 @@ void toggle (void){
 	int led;
 	char numPin[TAM_MAX];
 	FILE * copia;
-	char * estado = " ";
+	char estado;
 	for(led = 0; led < 8; led++){
 		if (snprintf(numPin, TAM_MAX, "/sys/class/gpio/gpio%s/value", mapeo[led]) < 0){
 			printf("ERROR: La direccion es erronea.\n");
@@ -110,9 +110,9 @@ void toggle (void){
 		}
 		copia = archivo;
 
-		fgetc(estado, 1, copia);
+		estado = fgetc(copia);
 
-		if(*estado == '1'){
+		if(estado == '1'){
 			if(fputc('0', archivo) == -1){
 				printf("No ha sido posible apagar el led %d.", led);
 				exit(1);
