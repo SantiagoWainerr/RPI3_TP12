@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include "hardware.h"
 
 #define TAM_MAX 50
@@ -33,7 +34,7 @@ void inicialization (void){
 			exit(1);
 		}
 		fclose(archivo);
-
+		delay(0.5);
 	}
 }
 
