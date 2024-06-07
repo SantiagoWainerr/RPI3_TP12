@@ -16,22 +16,22 @@ void inicialization (void){
 	for(i = 0; i < 8; i++){
 		if ((archivo = fopen(exportar, "w")) == NULL){
 			printf("No es posible exportar el gpio %s.\n", mapeo[i]);
-			exit(1);
+
 		}
 		fprintf(archivo, mapeo[i]);
 		fclose(archivo);
 
 		if (snprintf(numPin, TAM_MAX, "/sys/class/gpio/gpio%s/direction", mapeo[i]) < 0){
 			printf("ERROR: La direccion es erronea.\n");
-			exit(1);
+
 		}
 		if((archivo = fopen(numPin, "w")) == NULL){
 			printf("No es posible acceder al gpio %s.\n", mapeo[i]);
-			exit(1);
+
 		}
 		if(fprintf(archivo,"out") == -1){
 			printf("No ha sido posible establecer la direccion del gpio %s.", mapeo[i]);
-			exit(1);
+
 		}
 		fclose(archivo);
 	}
