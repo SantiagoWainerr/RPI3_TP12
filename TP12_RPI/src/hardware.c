@@ -28,7 +28,7 @@ void inicialization (void){
 		}
 		if((archivo = fopen(numPin, "w")) == NULL){
 			printf("No es posible acceder al gpio %s.\n", mapeo[i]);
-
+   exit(1);
 		}
 		if(fprintf(archivo,"out") == -1){
 			printf("No ha sido posible establecer la direccion del gpio %s.", mapeo[i]);
