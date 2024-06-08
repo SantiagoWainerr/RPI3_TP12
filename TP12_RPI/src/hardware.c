@@ -11,6 +11,7 @@ char * mapeo[8] = {"17", "4", "19", "23", "24", "25", "22", "27"};
 
 void inicialization (void){
 	char numPin[TAM_MAX];
+	FILE * pinDirr;
 	char * exportar = "/sys/class/gpio/export";
 	int i;
 	for(i = 0; i < 8; i++){
@@ -26,14 +27,14 @@ void inicialization (void){
 			printf("ERROR: La direccion es erronea.\n");
 
 		}
-		if((archivo = fopen(numPin, "w")) == NULL){
+		if((pinDirr = fopen(numPin, "w")) == NULL){
 			printf("No es posible acceder al gpio %s.\n", mapeo[i]);
 		}
-		if(fprintf(archivo,"out") == -1){
+		if(fprintf(pinDirr,"out") == -1){
 			printf("No ha sido posible establecer la direccion del gpio %s.", mapeo[i]);
 
 		}
-		fclose(archivo);
+		fclose(pinDirr);
 	
 	}
 }
