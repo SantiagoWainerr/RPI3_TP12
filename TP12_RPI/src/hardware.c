@@ -22,7 +22,7 @@ void inicialization (void){
 		fprintf(archivo, mapeo[i]);
 		fflush(archivo);
 		fclose(archivo);
-  sleep(0.5);
+  sleep(2);
 		if (snprintf(numPin, TAM_MAX, "/sys/class/gpio/gpio%s/direction", mapeo[i]) < 0){
 			printf("ERROR: La direccion es erronea.\n");
 
