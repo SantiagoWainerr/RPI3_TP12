@@ -19,6 +19,7 @@ void inicialization (void){
 
 		}
 		fprintf(archivo, mapeo[i]);
+		fflush(archivo);
 		fclose(archivo);
 
 		if (snprintf(numPin, TAM_MAX, "/sys/class/gpio/gpio%s/direction", mapeo[i]) < 0){
