@@ -20,6 +20,7 @@ int main (void){
 				turnOff();
 				break;
 			case 'q':
+				turnOff();
 				break;
 			default:				// SET_GPIOx
 				led_On(c - '0');
