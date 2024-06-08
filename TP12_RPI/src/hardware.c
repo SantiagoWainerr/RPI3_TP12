@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <unistd.h>
 #include "hardware.h"
 
 #define TAM_MAX 50
@@ -22,7 +22,7 @@ void inicialization (void){
 		fprintf(archivo, mapeo[i]);
 		fflush(archivo);
 		fclose(archivo);
-  
+  sleep(0.5);
 		if (snprintf(numPin, TAM_MAX, "/sys/class/gpio/gpio%s/direction", mapeo[i]) < 0){
 			printf("ERROR: La direccion es erronea.\n");
 
