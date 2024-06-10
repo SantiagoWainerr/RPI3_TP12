@@ -7,7 +7,7 @@
 
 FILE * archivo;
 
-char * mapeo[8] = {"17", "4", "19", "23", "24", "25", "22", "27"};
+char * mapeo[8] = {"17", "4", "18", "23", "24", "25", "22", "27"};
 
 void inicialization (void){
 	char numPin[TAM_MAX];
